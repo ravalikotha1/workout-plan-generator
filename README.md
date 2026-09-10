@@ -16,11 +16,8 @@ The two only communicate over the `/generate-plan` REST endpoint —
    ```bash
    uv sync
    ```
-3. Create a `.env` file in the project root with your Groq credentials:
-   ```
-   GROQ_API_KEY=your-groq-api-key-here
-   GROQ_MODEL=llama-3.3-70b-versatile
-   ```
+3. Create a `.env` file from sample dotenv 
+  
    Get an API key at [console.groq.com](https://console.groq.com). Check [console.groq.com/docs/models](https://console.groq.com/docs/models) for current available model names.
 
 ## Running the app
