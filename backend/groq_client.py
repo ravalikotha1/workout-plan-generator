@@ -36,8 +36,7 @@ def call_groq(system_prompt: str, user_prompt: str) -> str:
 
 class MalformedPlanError(Exception):
     """Raised when Groq's response is empty, not valid JSON, or doesn't
-    match LLMPlanOutput. main.py catches this specifically — see your
-    retry design: this is the exception that should trigger a retry."""
+    match LLMPlanOutput. """
 
 
 def parse_response(raw_response: str) -> LLMPlanOutput:
@@ -64,10 +63,10 @@ def parse_response(raw_response: str) -> LLMPlanOutput:
 
 class PlanGenerationFailedError(Exception):
     """Raised when generate_validated_plan exhausts all attempts without
-    producing a valid LLMPlanOutput — whether from repeated API failures,
+    producing a valid LLMPlanOutput: whether from repeated API failures,
     repeated malformed responses, or a mix of both. main.py catches only
     this one exception and turns it into a generic 502; the specific
-    reason for each failed attempt is logged here, not passed along."""
+    reason for each failed attempt is logged."""
 
 
 def generate_validated_plan(
@@ -77,9 +76,7 @@ def generate_validated_plan(
 
     Both failure modes — the API call itself failing, and Groq responding
     with malformed/invalid JSON — share one budget of `max_attempts` total
-    attempts. Each attempt re-runs call_groq from scratch (retrying just
-    parse_response on the same raw text can never produce a different
-    result, since it's a pure function of already-fixed input).
+    attempts.).
     """
     for attempt in range(1, max_attempts + 1):
         try:

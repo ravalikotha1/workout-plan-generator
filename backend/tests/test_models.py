@@ -1,7 +1,5 @@
 """Unit tests for backend/models.py — Pydantic validation at the boundary.
 
-Boilerplate (imports, ValidationError pattern) is filled in. Fill in the
-actual assertions — they depend on the response schema you're designing.
 """
 import pytest
 from pydantic import ValidationError

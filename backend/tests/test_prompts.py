@@ -1,6 +1,4 @@
 """Unit tests for backend/prompts.py.
-
-No network calls needed — build_user_prompt is a pure function.
 """
 from backend.models import EquipmentAccess, ExperienceLevel, FitnessGoal, WorkoutRequest
 from backend.prompts import build_user_prompt

@@ -1,4 +1,3 @@
-"""Backend configuration — pure boilerplate, no design decisions here."""
 import os
 
 from dotenv import load_dotenv

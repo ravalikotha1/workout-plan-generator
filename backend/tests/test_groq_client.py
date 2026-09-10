@@ -55,7 +55,7 @@ def test_call_groq_returns_text(mock_client: MagicMock):
 @patch("backend.groq_client.call_groq")
 def test_generate_validated_plan_retries_on_malformed_json(mock_call_groq: MagicMock):
     # First two attempts return garbage, third returns a valid plan —
-    # confirms the retry loop actually re-runs call_groq, not just parsing.
+    # confirms the retry loop actually re-runs call_groq.
     valid = '{"days": [{"day_number": 1, "exercises": [{"name": "Push-up", "sets": 3, "reps": 10}]}]}'
     mock_call_groq.side_effect = ["not json", "{}", valid]
 

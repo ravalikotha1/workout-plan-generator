@@ -11,7 +11,4 @@ GENERATE_ENDPOINT = f"{BACKEND_URL}/generate-plan"
 GOALS = ["Build muscle", "Lose fat", "General fitness", "Improve endurance"]
 EXPERIENCE_LEVELS = ["Beginner", "Intermediate", "Advanced"]
 EQUIPMENT_OPTIONS = ["No equipment", "Home dumbbells", "Full gym"]
-
-# Sentinel shown as the default selectbox choice so required dropdowns start
-# "empty" rather than silently defaulting to the first real option.
 SELECT_PLACEHOLDER = "-- Select --"
